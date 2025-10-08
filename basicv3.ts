@@ -58,6 +58,19 @@ namespace basic {
     }
 
 
+    //% group="RGB LEDs (nur bei Änderung)" advanced=true
+    //% block="RGB LED %led %color0 %on %color1" weight=4
+    //% led.shadow=basicv3_rgbled
+    //% color0.shadow="colorNumberPicker" color0.defl=Colors.Off
+    //% color1.shadow="colorNumberPicker" color1.defl=Colors.Green
+    //% on.shadow=toggleOnOff on.defl=1
+    //% inlineInputMode=inline
+    export function setLedColors2(led: number, color0: number, on = true, color1: number) {
+        if (on)
+            setLedColors1(led, color1)
+        else
+            setLedColors1(led, color0)
+    }
 
 
     //% group="RGB LED" advanced=true
